@@ -37,7 +37,7 @@ class Book(UserMixin, db.Model):
     img_url = db.Column(db.String(250))
 
 
-class User(UserMixin,db.Model):
+class User(UserMixin, db.Model):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(250))
@@ -53,7 +53,7 @@ user_books = db.Table(
 )
 
 
-db.create_all()
+# db.create_all()
 
 
 login_manager = LoginManager()
