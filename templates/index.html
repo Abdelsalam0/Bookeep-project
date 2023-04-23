@@ -1,0 +1,45 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+{% endblock %}
+
+<!--{% block title %}BooKeep{% endblock %}-->
+
+{% block content %}
+{% include "header.html" %}
+<!--<div class="container search">-->
+<!--  <h1 class="heading bookeep">Bookeep</h1>-->
+<!--    {{ wtf.quick_form(form, novalidate=True) }}-->
+<!--</div>-->
+<!--<div class="container books">-->
+<!--    <h4>-->
+<!--        <b>Number of books: {{num_books}}</b>-->
+<!--    </h4>-->
+<!--</div>-->
+
+<!--<form method="POST" action="{{ url_for('delete') }}">-->
+<!--    <input class="delete btn btn-primary button delete-button" type="submit" value="Delete">-->
+<!--    <div class="container">-->
+<!--    <div class="row  books ">-->
+<!--            {% for book in books %}-->
+<!--                <div class="col-md-2 book">-->
+<!--                    <img class="bookimage" src="{{book.img_url}}">-->
+<!--                    <input type="checkbox" name="books" value="{{book.id}}">-->
+<!--                    <a href="{{url_for('bookdetails',id=book.id)}}"><p class="bookname">{{book.title}}</p></a>-->
+<!--&lt;!&ndash;                    <a href="{{url_for('delete', id=book.id)}}" class="button btn btn-primary delete-button">Delete</a>&ndash;&gt;-->
+<!--                </div>-->
+<!--                {% if loop.index % 6 == 0 %}-->
+<!--                        <div class="row"></div>-->
+<!--                    {% endif %}-->
+<!--             {% endfor %}-->
+<!--    </div>-->
+<!--</div>-->
+<!--</form>-->
+
+
+{% endblock %}
+
+

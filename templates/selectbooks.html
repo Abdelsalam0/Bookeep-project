@@ -1,0 +1,44 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+{% block styles %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+{% endblock %}
+
+{% block title %}BooKeep{% endblock %}
+
+{% block content %}
+{% include "header.html" %}
+<a  href="{{url_for('home')}}"><h3>Home</h3></a>
+<div class="container search">
+  <h1 class="heading bookhead">Select a Book</h1>
+</div>
+
+{% if books %}
+<form method="POST" action="{{ url_for('select') }}">
+    <input class="sub-button btn btn-primary" type="submit" value="Submit">
+    <div class="container">
+        <div class="row">
+            {% for book in books %}
+                <div class="col-md-2">
+                    <img src="{{ book.thumbnail }}">
+                    <input type="checkbox" name="books" value="{{book}}">
+                    <h4>{{ book.title }}</h4>
+                    <p>{{ book.authors[0] }}</p>
+                 </div>
+                {% if loop.index % 6 == 0 %}
+                <div class="row"></div>
+                {% endif %}
+            {% endfor %}
+
+        </div>
+    </div>
+    </form>
+    {% endif %}
+
+
+{% endblock %}
+
+

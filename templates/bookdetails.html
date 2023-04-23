@@ -1,0 +1,23 @@
+{%extends 'bootstrap/base.html'%}
+
+{% block styles %}
+{{super()}}
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+{% endblock %}
+
+{% block title %}{{book.title}}{% endblock %}
+
+{% block content %}
+<div><a class="home" href="{{url_for('home')}}"><h3>Home</h3></a></div>
+    <h1 class="heading">{{book.title}}</h1>
+    <div class="description">
+        <img class="detailsimg" src="{{book.img_url}}">
+        <p><b>Author</b>:{{book.author}}</p>
+        <p><b>Description</b>: {{book.description}}</p>
+         <p><b>Category</b>: {{book.category}}</p>
+        <br>
+        <p><b>Number of pages</b>: {{book.page_count}}</p>
+    </div>
+
+
+{% endblock %}
